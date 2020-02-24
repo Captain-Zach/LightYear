@@ -1,8 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<div class="EntirePage">
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">LightYear</h1>
+    <h3>You are @ViewBag.Turn number of turns in!  Good luck! </h3>
+</div>
+    <div >
+        <div class="Ship_Map_Position_Block">Player1</div>
+        <div class="Ship_Map_Position_Block">1/11</div>
+        <div class="Ship_Map_Position_Block">2/10</div>
+        <div class="Ship_Map_Position_Block">3/9</div>
+        <div class="Ship_Map_Position_Block">4/8</div>
+        <div class="Ship_Map_Position_Block">5/7</div>
+        <div class="Ship_Map_Position_Block">6/6</div>
+        <div class="Ship_Map_Position_Block">7/5</div>
+        <div class="Ship_Map_Position_Block">8/4</div>
+        <div class="Ship_Map_Position_Block">9/3</div>
+        <div class="Ship_Map_Position_Block">10/2</div>
+        <div class="Ship_Map_Position_Block">11/1</div>
+        <div class="Ship_Map_Position_Block">Player2</div>
+    </div>
+<form asp-action="Test"><button>Test</button></form>
+<form asp-action="Reset"><button>Reset</button>
+</form>
 </div>
