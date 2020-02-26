@@ -4,10 +4,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LightYear.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Reinitialize : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Instances",
+                columns: table => new
+                {
+                    GameId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    p1Turn = table.Column<bool>(nullable: false),
+                    p2Turn = table.Column<bool>(nullable: false),
+                    turnNumber = table.Column<int>(nullable: false),
+                    p1Population = table.Column<int>(nullable: false),
+                    p2Population = table.Column<int>(nullable: false),
+                    p1Damage = table.Column<int>(nullable: false),
+                    p2Damage = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Instances", x => x.GameId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Players",
                 columns: table => new
@@ -31,13 +50,11 @@ namespace LightYear.Migrations
                 {
                     ShipId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Type = table.Column<string>(nullable: true),
+                    GameId = table.Column<int>(nullable: false),
+                    PlayerState = table.Column<int>(nullable: false),
                     Health = table.Column<int>(nullable: false),
                     Damage = table.Column<int>(nullable: false),
-                    PlayerId = table.Column<int>(nullable: false),
-                    Position = table.Column<int>(nullable: false),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
-                    UpdatedAt = table.Column<DateTime>(nullable: false)
+                    PlayerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,44 +64,8 @@ namespace LightYear.Migrations
                         column: x => x.PlayerId,
                         principalTable: "Players",
                         principalColumn: "PlayerId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "Fleets",
-                columns: table => new
-                {
-                    FleetId = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    PlayerId = table.Column<int>(nullable: false),
-                    ShipId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Fleets", x => x.FleetId);
-                    table.ForeignKey(
-                        name: "FK_Fleets_Players_PlayerId",
-                        column: x => x.PlayerId,
-                        principalTable: "Players",
-                        principalColumn: "PlayerId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Fleets_Ships_ShipId",
-                        column: x => x.ShipId,
-                        principalTable: "Ships",
-                        principalColumn: "ShipId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Fleets_PlayerId",
-                table: "Fleets",
-                column: "PlayerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Fleets_ShipId",
-                table: "Fleets",
-                column: "ShipId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ships_PlayerId",
@@ -95,7 +76,7 @@ namespace LightYear.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Fleets");
+                name: "Instances");
 
             migrationBuilder.DropTable(
                 name: "Ships");

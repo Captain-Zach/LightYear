@@ -4,15 +4,18 @@
     <h1>LightYear</h1>
     <h2>Turn @ViewBag.GameState.turnNumber</h2>
 </Div>
-<h3 class='Player1State'>Player 1 state @ViewBag.GameState.p1Turn</h3>
-<h3 class='Player2State'>Player 2 state @ViewBag.GameState.p2Turn</h3>
+<h3 class='Player1State'>Population is @ViewBag.GameState.p1Population</h3>
+<h3 class='Player2State'>Population is @ViewBag.GameState.p2Population</h3>
+@* <form asp-action="AttackEnemyPlayer" asp-controller="Post">
+    <button>Send Ships</button>
+</form> *@
 <form asp-action="Turn" asp-controller="Post">
-    <button>End Turn</button>
+    <button>Send Ship</button>
 </form>
 <a align='left' asp-action="EndGame" asp-controller="Post">End Game</a>
 
 <br>
-<div class='NewShipDiv'>
+@* <div class='NewShipDiv'>
     <form asp-action='ProcessNewShip' asp-controller='Post' method='post'>
         <input name='Type' value='TestShip'>
         <input  name='Health' input-type='Hidden'value='100'>
@@ -20,4 +23,9 @@
         <input name='Position' value='1'>
         <input type='submit' value='Create Ship'>
     </form>
-</div>
+</div> *@
+<h3 class="CombatLog">Combat Log</h3>
+@if(ViewBag.GameState.p1Damage != 0){
+<p>Player 1 Lost @ViewBag.GameState.p1Damage Population</p>
+<p>Player 2 Lost @ViewBag.GameState.p2Damage Population</p>
+}

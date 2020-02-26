@@ -14,16 +14,16 @@ namespace LightYear.Models
         public bool p2Turn {get;set;}
         // 
         public int turnNumber {get;set;}
+
+        public int p1Population {get;set;}
+
+        public int p2Population {get;set;}
         //
-        public List<Player> All_Players {get;set;}
+        // public bool isActive {get;set;}
+        public int p1Damage {get;set;}
         // 
-        public List<Ship> All_Ships_In_This_Game {get;set;}
+        public int p2Damage {get;set;}
         // 
-        public List<BattleLog> All_BattleLogs {get;set;}
-
-        public bool isActive {get;set;}
-
-
         //p2pop
         //p1kills
         //p2kills

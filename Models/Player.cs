@@ -15,8 +15,6 @@ namespace LightYear.Models
         //
         public  bool IsActive {get;set;}
         //
-        public int Population {get;set;}
-        //
         public DateTime CreatedAt {get;set;}
         //
         public DateTime UpdatedAt {get;set;}

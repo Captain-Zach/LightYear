@@ -66,34 +66,33 @@ namespace LightYear.Controllers
         }
         public IActionResult StartGame()
         {
-            // // HttpContext.Session.SetString("P1Turn", "false");
-            // // HttpContext.Session.SetString("P2Turn", "false");
-            // // HttpContext.Session.SetInt32("TurnNumber", 1);
-            // GameState Gamestate = new GameState();
-            // // GameState will handle this 
-            // // Gamestate needs reference to player ID's
-            // // this will prevent creating multiple game states
-            // // per startgame click
-            // Gamestate.p1Turn = false;
-            // Gamestate.p2Turn = false;
-            // Gamestate.turnNumber = 1;
-            // dbContext.Add(Gamestate);
-            // dbContext.SaveChanges();
-            // HttpContext.Session.SetInt32("GameId", Gamestate.GameId);
-            // System.Console.WriteLine(Gamestate.GameId);
-            // System.Console.WriteLine("*******************************************************************");
             return RedirectToAction("GameScreen", "Home");
         }
 
         public IActionResult Turn()
         {
             GameState gameState = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
-            if(HttpContext.Session.GetInt32("PlayerState")==1)
+
+            if(HttpContext.Session.GetInt32("PlayerState")==1 && gameState.p1Turn == false)
             {
+                Ship ship = new Ship();
+                ship.Damage = 5;
+                ship.Health = 5;
+                ship.GameId = gameState.GameId;
+                ship.PlayerState = 1;
+                dbContext.Add(ship);
+                dbContext.SaveChanges();
                 gameState.p1Turn = true;
             }
             if(HttpContext.Session.GetInt32("PlayerState")==2)
             {
+                Ship ship = new Ship();
+                ship.Damage = 5;
+                ship.Health = 5;
+                ship.GameId = gameState.GameId;
+                ship.PlayerState = 2;
+                dbContext.Add(ship);
+                dbContext.SaveChanges();
                 gameState.p2Turn = true;
             }
             dbContext.SaveChanges();
@@ -107,25 +106,69 @@ namespace LightYear.Controllers
             GameState gameState = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
             // Move people
             // Do Battle
+            // Battle1();
+            // Battle2();
+            Battle();
             // Grow Population
+            Grow();
+            // GameOver Check
+            if(gameState.p1Population < 1 || gameState.p2Population < 1)
+            {
+
+                return RedirectToAction("GameOver", "Home");
+            }
+            // GameOverCheck();
+
             TurnChange(gameState.GameId);
             return RedirectToAction("GameScreen", "Home");
         }
-        //
-        // public IActionResult ProcessNewShip(Ship newship)
-        // {   if(("PlayerState") == 1)
-        //     {
-        //         NewShip.UserId = (int)HttpContext.Session.GetInt32("PlayerState");
-        //         dbContext.Add(NewShip);
-        //         dbContext.SaveChanges();
-        //         return RedirectToAction("PlayerState", NewShip);
-        //     }
-        //     if(("PlayerState") ==2)
-        //     {
-                
-        //     }
-        //     return View("GameScreen");
+
+        public void Battle()
+        {
+            GameState GS = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
+            List<Ship> p1Ships = dbContext.Ships.Where(s => s.PlayerState == 1).ToList();
+            List<Ship> p2Ships = dbContext.Ships.Where(s => s.PlayerState == 2).ToList();
+            Random rand = new Random();
+            foreach(Ship ship in p1Ships)
+            {
+                GS.p1Damage = rand.Next(ship.Damage,ship.Damage + 6);
+                // dealing damage now
+                GS.p2Population -= GS.p1Damage;
+            }
+
+            foreach(Ship ship in p2Ships)
+            {
+                GS.p2Damage = rand.Next(ship.Damage,ship.Damage + 6);
+                GS.p1Population -= GS.p2Damage;
+            }
+
+        }
+        // public void Battle1()
+        // {
+        //     GameState GS = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
+        //     Random rand = new Random();
+        //     int x =  rand.Next(5,11);
+        //     GS.p1Population -= x;
+        //     GS.p1Damage = x;
+        //     dbContext.SaveChanges();
         // }
+        // public void Battle2()
+        // {
+        //     GameState GS = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
+        //     Random rand = new Random();
+        //     int x = rand.Next(5,11);
+        //     GS.p2Population -= x;
+        //     GS.p2Damage = x;
+        //     dbContext.SaveChanges();
+        // }
+
+        public void Grow()
+        {
+            GameState GS = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
+            GS.p1Population += 5;
+            GS.p2Population += 5;
+            dbContext.SaveChanges();
+        }
 
         public void TurnChange(int gameId)
         {

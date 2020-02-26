@@ -64,6 +64,9 @@ namespace LightYear.Controllers
             newGame.p1Turn = false;
             newGame.p2Turn = false;
             newGame.turnNumber = 1;
+            // SET PLAYER POPULATIONS
+            newGame.p1Population = 100;
+            newGame.p2Population = 100;
             dbContext.Add(newGame);
             dbContext.SaveChanges();
             HttpContext.Session.SetInt32("GameId", newGame.GameId);
@@ -77,28 +80,19 @@ namespace LightYear.Controllers
 
             if(CurrentState.p1Turn == true && CurrentState.p2Turn == true)
             {
-                // System.Console.WriteLine("Scream into the void!");
-                // int? x = HttpContext.Session.GetInt32("TurnNumber");
-                // x++;
-                // HttpContext.Session.SetInt32("TurnNumber", (int)x);
-                // //GAME FUNCTIONS HERE
                 return RedirectToAction("GameLogic", "Post");
             }
             ViewBag.GameState = CurrentState;
             return View("GameScreen");
         }
 
-        // public IActionResult Index()
-        // {
-        //     if(HttpContext.Session.GetInt32("TurnNumber") == null){
-        //         HttpContext.Session.SetInt32("TurnNumber", 1);
-        //     }
-        // //     ViewBag.Turn = HttpContext.Session.GetInt32("TurnNumber");
-        //     // System.Console.WriteLine("*****************************************************************");
-        //     // int? tester = HttpContext.Session.GetInt32("TurnNumber");
-        //     // System.Console.WriteLine(tester);
-        //     return View();
-        // }
+        public IActionResult GameOver()
+        {
+            List<Ship> allShips = dbContext.Ships.ToList();
+            foreach(Ship ship in allShips) {dbContext.Remove(ship);}
+            dbContext.SaveChanges();
+            return View();
+        }
 
 
         public IActionResult Test()

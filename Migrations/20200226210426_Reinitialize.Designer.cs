@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LightYear.Migrations
 {
     [DbContext(typeof(LightYearContext))]
-    [Migration("20200225041335_GameStateMigration")]
-    partial class GameStateMigration
+    [Migration("20200226210426_Reinitialize")]
+    partial class Reinitialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,30 +19,20 @@ namespace LightYear.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("LightYear.Models.Fleet", b =>
-                {
-                    b.Property<int>("FleetId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("PlayerId");
-
-                    b.Property<int>("ShipId");
-
-                    b.HasKey("FleetId");
-
-                    b.HasIndex("PlayerId");
-
-                    b.HasIndex("ShipId");
-
-                    b.ToTable("Fleets");
-                });
-
             modelBuilder.Entity("LightYear.Models.GameState", b =>
                 {
                     b.Property<int>("GameId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("p1Damage");
+
+                    b.Property<int>("p1Population");
+
                     b.Property<bool>("p1Turn");
+
+                    b.Property<int>("p2Damage");
+
+                    b.Property<int>("p2Population");
 
                     b.Property<bool>("p2Turn");
 
@@ -78,19 +68,15 @@ namespace LightYear.Migrations
                     b.Property<int>("ShipId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("CreatedAt");
-
                     b.Property<int>("Damage");
+
+                    b.Property<int>("GameId");
 
                     b.Property<int>("Health");
 
-                    b.Property<int>("PlayerId");
+                    b.Property<int?>("PlayerId");
 
-                    b.Property<int>("Position");
-
-                    b.Property<string>("Type");
-
-                    b.Property<DateTime>("UpdatedAt");
+                    b.Property<int>("PlayerState");
 
                     b.HasKey("ShipId");
 
@@ -99,25 +85,11 @@ namespace LightYear.Migrations
                     b.ToTable("Ships");
                 });
 
-            modelBuilder.Entity("LightYear.Models.Fleet", b =>
-                {
-                    b.HasOne("LightYear.Models.Player", "Player")
-                        .WithMany("Commanding")
-                        .HasForeignKey("PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("LightYear.Models.Ship", "Ship")
-                        .WithMany("Squad")
-                        .HasForeignKey("ShipId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("LightYear.Models.Ship", b =>
                 {
-                    b.HasOne("LightYear.Models.Player", "Owner")
-                        .WithMany()
-                        .HasForeignKey("PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("LightYear.Models.Player")
+                        .WithMany("Armada")
+                        .HasForeignKey("PlayerId");
                 });
 #pragma warning restore 612, 618
         }

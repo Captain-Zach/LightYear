@@ -31,3 +31,4 @@ C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.cspr
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Intro.g.cshtml.cs
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Lobby.g.cshtml.cs
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\GameScreen.g.cshtml.cs
+C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\GameOver.g.cshtml.cs

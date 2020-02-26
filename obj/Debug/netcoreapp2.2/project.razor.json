@@ -3014,6 +3014,11 @@
       "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\Lobby.cshtml",
       "TargetPath": "Views\\Home\\Lobby.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\GameOver.cshtml",
+      "TargetPath": "Views\\Home\\GameOver.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

@@ -12,7 +12,7 @@ namespace LightYear.Models
         //
         public DbSet<Ship> Ships {get;set;}
         //
-        public DbSet<BattleLog> BattleLogs {get;set;}
+        // public DbSet<BattleLog> BattleLogs {get;set;}
         //
         public DbSet<GameState> Instances {get;set;}
 
