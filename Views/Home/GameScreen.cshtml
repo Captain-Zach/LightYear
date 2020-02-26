@@ -1,0 +1,23 @@
+@model Player
+
+<Div>
+    <h1>LightYear</h1>
+    <h2>Turn @ViewBag.GameState.turnNumber</h2>
+</Div>
+<h3 class='Player1State'>Player 1 state @ViewBag.GameState.p1Turn</h3>
+<h3 class='Player2State'>Player 2 state @ViewBag.GameState.p2Turn</h3>
+<form asp-action="Turn" asp-controller="Post">
+    <button>End Turn</button>
+</form>
+<a align='left' asp-action="EndGame" asp-controller="Post">End Game</a>
+
+<br>
+<div class='NewShipDiv'>
+    <form asp-action='ProcessNewShip' asp-controller='Post' method='post'>
+        <input name='Type' value='TestShip'>
+        <input  name='Health' input-type='Hidden'value='100'>
+        <input name='Damage' value='20'>
+        <input name='Position' value='1'>
+        <input type='submit' value='Create Ship'>
+    </form>
+</div>

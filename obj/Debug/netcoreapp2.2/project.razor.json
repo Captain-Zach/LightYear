@@ -2986,6 +2986,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\GameScreen.cshtml",
+      "TargetPath": "Views\\Home\\GameScreen.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -2996,8 +3001,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\Intro.cshtml",
+      "TargetPath": "Views\\Home\\Intro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\Lobby.cshtml",
+      "TargetPath": "Views\\Home\\Lobby.cshtml",
       "FileKind": "mvc"
     }
   ],

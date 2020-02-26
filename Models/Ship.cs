@@ -8,24 +8,24 @@ namespace LightYear.Models
     {
         [Key]
         public int ShipId {get;set;}
+        //added GameID
+        public int GameId {get;set;}
+        // 
+        public int PlayerId {get;set;}
+        //
+        public Player Owner {get;set;}
         //
         public string Type {get;set;}
+        //
+        public int Timer {get;set;}
         //
         public int Health {get;set;}
         //
         public int Damage {get;set;}
         //
-        public int PlayerId {get;set;}
-        //
-        public int Position {get;set;}
-        //
-        public Player Owner {get;set;}
-        //
         public DateTime CreatedAt {get;set;}
         //
         public DateTime UpdatedAt {get;set;}
-        //
-        public List<Fleet> Squad {get;set;}
-        //
+        // 
     }
 }

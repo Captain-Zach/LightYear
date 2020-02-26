@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Player
+
+<div class="text-center">
+    <h1 class="display-4">LightYear</h1>
+    <h3>Welcome to the intro page!</h3>
+    <h4>Testing player logins!</h4>
+    <form asp-action="LoginProcess" asp-controller="Post" method="post">
+        <p>
+            <p align="center">
+                <input name='Name' type="text">
+            </p>
+            <p align="center">
+                <button>Hop on in!</button>
+            </p>
+        </p>
+    </form>
+
+

@@ -11,12 +11,16 @@ namespace LightYear.Models
         //
         public string Name {get;set;}
         //
-        public int Resources {get;set;}
+        public int PlayerState {get;set;}
+        //
+        public  bool IsActive {get;set;}
+        //
+        public int Population {get;set;}
         //
         public DateTime CreatedAt {get;set;}
         //
         public DateTime UpdatedAt {get;set;}
         //
-        public List<Fleet> Commanding {get;set;}
+        public List<Ship> Armada {get;set;}
     }
 }

@@ -28,3 +28,6 @@ C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.View
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.dll
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.pdb
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.csproj.CopyComplete
+C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Intro.g.cshtml.cs
+C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Lobby.g.cshtml.cs
+C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\GameScreen.g.cshtml.cs

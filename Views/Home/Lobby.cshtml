@@ -1,0 +1,34 @@
+@model Player
+
+<h1>
+    @if(Model.Name != null)
+    {
+        <p>
+            Welcome @Model.Name
+        </p>
+    }
+</h1>
+<h1>
+    @if(ViewBag.GameReady == false)
+    {   
+        <p>
+            Waiting For Player2..
+        </p>
+    }
+    else
+    {
+        <p>
+            Let the games Begin!
+            @* Button to game screen *@
+            <Form asp-action='StartGame' asp-controller='Post' method='POST'>
+                <input type='submit' value='Start Game'>
+            </Form>
+        </p>
+    }
+</h1>
+
+
+
+<a asp-action="EndGame" asp-controller="Post">End Game</a>
+
+
