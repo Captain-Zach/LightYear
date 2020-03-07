@@ -3,14 +3,16 @@ using System;
 using LightYear.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LightYear.Migrations
 {
     [DbContext(typeof(LightYearContext))]
-    partial class LightYearContextModelSnapshot : ModelSnapshot
+    [Migration("20200228185940_InitialMigraiton")]
+    partial class InitialMigraiton
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

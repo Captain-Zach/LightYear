@@ -23,9 +23,23 @@ namespace LightYear.Models
         //
         public int Damage {get;set;}
         //
+        public int Cost {get;set;}
+        // 
         // public DateTime CreatedAt {get;set;}
         // //
         // public DateTime UpdatedAt {get;set;}
         // // 
+        public Ship(int pState, int gameId)
+        {
+            Health = 5;
+            Damage = 5;
+            Cost = 5;
+            PlayerState = pState;
+            GameId = gameId;
+        }
+        public Ship()
+        {
+            // this do nothing!
+        }
     }
 }

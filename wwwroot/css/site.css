@@ -7,6 +7,11 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.ALLOWANCE{
+  width: 400px;
+  height: 400px;
+  background-color: solid blue;
+}
 /* zach class */
 .side_by{
   display: inline-block;
@@ -19,8 +24,28 @@ html {
 }
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+      font-size: 16px;
   }
+}
+table {
+  border-collapse: collapse;
+}
+th, td, tr {
+  color: rgb(0, 255, 21);
+  border: 2px solid rgb(255, 115, 0);
+  padding: 10px 10px;
+}
+/* General style  */
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+/* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
 
 .border-top {
@@ -39,17 +64,6 @@ button.accept-policy {
   line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
   position: absolute;
   bottom: 0;
@@ -72,20 +86,204 @@ body {
   background-color: black;
   height: 800px;
 }
+.Player2State{
+  border-radius: 5%;
+  color:rgb(255, 0, 0);
+  /* background-image: linear-gradient(to bottom right,rgba(22, 22, 22, 0.123),rgb(27, 27, 27), rgba(83, 80, 80, 0.253), rgb(65, 58, 58),grey, black, red); */
+  font-style: oblique;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .Player1State{
-  color:red;
+  border-radius: 5%;
+  color:rgb(4, 255, 4);
+  /* background-image: linear-gradient(to bottom right,rgba(22, 22, 22, 0.123),rgb(27, 27, 27), rgba(83, 80, 80, 0.253), rgb(65, 58, 58),grey, black, rgb(14, 182, 42)); */
+  font-style: oblique;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.babybattlelogtitle{
+  color: white;
   font-style: oblique;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
-.Player1State{
-  color:green;
+.shipDetails{
+  margin-left: 20px;
+  text-align: center;
+  color:white;
   font-style: oblique;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
+
 .NewShipDiv{
-  color: rgb(172, 159, 159);
-  background-image: linear-gradient(rgba(79, 82, 81, 0.555), rgba(44, 44, 44, 0.445), rgba(80, 80, 80, 0.459));
+color: rgb(172, 159, 159);
+background-image: linear-gradient(rgba(79, 82, 81, 0.555), rgba(44, 44, 44, 0.445), rgba(80, 80, 80, 0.459));
+}
 
+#babywrapper{
+  margin-right: auto;
+  margin-left: auto;
+  width: 970px;
+  height: 962px;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  background-color:#000000;
+}
+
+.shipyardbutton{
+  height: 24px;
+  width: 100px;
+  border-radius: 20%;
+  background-image: linear-gradient(to bottom right,rgb(48, 45, 45),rgb(37, 34, 34), black);
+  color: rgb(238, 255, 0);
+}
+
+.yeetyomommayeet{
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.TopDisplayBox{
+  height:220;
+  width:970;
+  padding-top: 20px;
+  background-image: linear-gradient(to bottom right,rgb(0, 255, 0),grey, black, white,grey, black, red);
+}
+
+.columns{
+  border-radius: 35%;
+  height: 140px;
+  width: 298px;
+  margin-top: -10px;
+  margin-bottom: 11px;
+  margin-left: 15px;
+  background-color: black;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.MidDisplayBox{
+  border-radius: 5%;
+  margin-top: 560px;
+  margin-left:20px;
+  height:180px;
+  width:350px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  background-image: linear-gradient(to bottom right,rgb(29, 31, 29),rgba(128, 128, 128, 0.561), black, rgba(255, 255, 255, 0.144),rgba(54, 49, 49, 0.356), black, rgba(37, 36, 36, 0.267));
+  vertical-align: top;
+  display: inline-block;
+}
+
+.undercolumns{
+  border-radius: 55%;
+  background-image: linear-gradient(to bottom right,rgb(56, 56, 56),rgba(128, 128, 128, 0.561), rgb(56, 54, 54), rgba(255, 255, 255, 0.144),rgba(54, 49, 49, 0.356), rgb(49, 48, 48), rgba(37, 36, 36, 0.267));
+height: 165px;
+width: 200px;
+margin-top: 20px;
+margin-left: 35px;
+vertical-align: top;
+display: inline-block;
+}
+
+.dropdown-test-ship {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content-test-ship {
+  margin-left: -6px;
+  display: none;
+  position: absolute;
+  color: rgb(0, 255, 255);
+  background-color: #000000;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px 16px;
+  z-index: 1;
+}
+
+.dropdown-test-ship:hover .dropdown-content-test-ship {
+  display: block;
+}
+
+.baby-battlelog {
+  margin-left: 150px;
+  width: 290;
+  height: 290px;
+  overflow-y: scroll;
+  display: inline-block;
+}
+
+.Gameover{
+  padding-top: 100px;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  font-style: oblique;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.GameoverHeader{
+  padding-top: 20px;
+  vertical-align: top;
+  margin-left:25px;
+  background-color: rgba(0, 0, 0, 0.267);
+  width: 900px;
+  border-width: 2px;  
+}
+
+.gameovervictorious{
+  text-align: center;
+  color: rgb(0, 255, 0);
+}
+
+.GameOverBattleHistoryHeader{
+  text-align: center;
+  color: white;
+  font-style: oblique;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.GameOverBattleHistory{
+  /* border-style: solid;
+  border-color: orange; */
+  text-align: center;
+  margin-left: 240px;
+  background-color: rgba(73, 68, 67, 0.151);
+  color: white;
+  height: 200px;
+  width:470px;
+  overflow: auto;
+}
+
+.IntroPageArt{
+  /* background-image: radial-gradient(circle, rgba(29, 26, 26, 0.226), rgba(19, 19, 15, 0.116), rgba(22, 24, 22, 0.274)); */
+  margin-bottom: 200px;
+  margin-top: 0px;
+  margin-left: 100px;
+  display: inline-block;
+}
+
+.Intropicture{
+  background: linear-gradient(#161a1f, #a0999962, transparent), ("images/introartnewest.jpg") no-repeat center; 
+  background-size: cover;
+  width: 750px;
+}
+.gradiantpicturediv{
+  width: 800px;
+}
+.input{
+  background-color: black;
+}
+.shipnumbut{
+  width: 60px;
+  color: rgb(112, 244, 248);
+  background-color: black;
+}.numshipslabel{
+  color: white;
 }

@@ -1,31 +1,133 @@
 @model Player
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Screen</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<Div>
-    <h1>LightYear</h1>
-    <h2>Turn @ViewBag.GameState.turnNumber</h2>
-</Div>
-<h3 class='Player1State'>Population is @ViewBag.GameState.p1Population</h3>
-<h3 class='Player2State'>Population is @ViewBag.GameState.p2Population</h3>
-@* <form asp-action="AttackEnemyPlayer" asp-controller="Post">
-    <button>Send Ships</button>
-</form> *@
-<form asp-action="Turn" asp-controller="Post">
-    <button>Send Ship</button>
-</form>
-<a align='left' asp-action="EndGame" asp-controller="Post">End Game</a>
+</head>
+<body>
+    <div id="babywrapper">
+        <Div class="TopDisplayBox">
+            <!---->
+            <div class="columns">
+                <h3 align='center' class='Player1State'>
+                    <p>
+                        Player 1
+                    </p>
+                        Pop @ViewBag.GameState.p1Population
+                    </p>
+                    <p>
+                        Ship @ViewBag.p1Ships
+                    </p>
 
-<br>
-@* <div class='NewShipDiv'>
-    <form asp-action='ProcessNewShip' asp-controller='Post' method='post'>
-        <input name='Type' value='TestShip'>
-        <input  name='Health' input-type='Hidden'value='100'>
-        <input name='Damage' value='20'>
-        <input name='Position' value='1'>
-        <input type='submit' value='Create Ship'>
-    </form>
-</div> *@
-<h3 class="CombatLog">Combat Log</h3>
-@if(ViewBag.GameState.p1Damage != 0){
-<p>Player 1 Lost @ViewBag.GameState.p1Damage Population</p>
-<p>Player 2 Lost @ViewBag.GameState.p2Damage Population</p>
-}
+
+                </h3>
+            </div>
+            <!---->
+            <div class="columns">
+                <!-- <h1 class='babybattlelogtitle' align="center">LightYear</h1> -->
+                <br>
+                <h2 class="babybattlelogtitle"align='center'>Month @ViewBag.GameState.turnNumber </h2>
+                <br>
+                <br>
+                <br>
+                <div align="center" class="col-sm-14">
+                
+                    <table class="table table-striped">
+                        <h2 class='babybattlelogtitle'>Battle Log</h2>
+                                <tr>
+                                    <th class="Player1State">Player 1</th>
+                                    <th class="Player1State">Lost</th>
+                                    <th class="Player1State">@ViewBag.GameState.p1Damage thousand</th>
+                                    <th class="Player1State">Population</th>
+                                </tr>
+                                <tr>
+                                    <th class="Player2State">Player 2</th>
+                                    <th class="Player2State">Lost</th>
+                                    <th class="Player2State">@ViewBag.GameState.p2Damage thousand</th>
+                                    <th class="Player2State">Population</th>
+                                </tr>  
+                    </table>
+                </div>
+            </div>
+            <!---->
+            <div class="columns">
+                <h3 align='center'class='Player2State'>
+                    <p>
+                        Player 2
+                    </p>
+                        Pop @ViewBag.GameState.p2Population
+                    </p>
+                    <p>
+                        Ship @ViewBag.p2Ships
+                    </p>
+                </h3>
+            </div>
+            <!---->
+        </Div>
+        
+        <!-- <div class="MidDisplayBox">
+            <div align="center" class="col-sm-14">
+                
+                <table class="table table-striped">
+                    <h1 class='babybattlelogtitle'>Battle Log</h1>
+                            <tr>
+                                <th>Player 1</th>
+                                <th>Lost</th>
+                                <th>xthousand</th>
+                                <th>Population</th>
+                            </tr>
+                            <tr>
+                                <th>Player 2</th>
+                                <th>Lost</th>
+                                <th>xthousand</th>
+                                <th>Population</th>
+                            </tr>  
+                </table>
+            </div>
+        </div> -->
+
+        <div class="undercolumns">
+            <h3 align="center" class="babybattlelogtitle">Orbital Ship Yard</h3>
+
+            <div class="dropdown-test-ship">
+                <span class="shipDetails">Ship Details</span>
+                <div class="dropdown-content-test-ship">
+                    <p>
+                        <h4>
+                            Type: Fighter
+                        </h4>
+                        <p>
+                            Cost: 5
+                        </p>
+                        <p>
+                            Health: 5
+                        </p>
+                        <p>
+                            Damage: 5
+                        </p>
+                        <p>
+                            Description: This fighter is state of the art..
+                        </p>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <form asp-action='MakeShips' asp-controller='Post' >
+                    <label class='numshipslabel' for="shipNumber">Number of Ships:</label>
+                    <input class='shipnumbut' type="number" name="shipNumber" id="">
+                    <p align='center'><button class='shipyardbutton'>Purchase</button></p>
+                </form>
+            </div>
+            <div align="center">
+                <form asp-action="TurnX" asp-controller="Post">
+                    <button class='shipyardbutton'>End Turn --></button>
+                </form>
+            </div>
+    </div>
+    
+</body>
+</html>

@@ -2961,6 +2961,11 @@
   "RootNamespace": "LightYear",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\Temp.cshtml",
+      "TargetPath": "Views\\Home\\Temp.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -2978,11 +2983,6 @@
     {
       "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3018,6 +3018,11 @@
     {
       "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\GameOver.cshtml",
       "TargetPath": "Views\\Home\\GameOver.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Zach\\Desktop\\LightYear\\LightYear\\Views\\Home\\GameOverMan.cshtml",
+      "TargetPath": "Views\\Home\\GameOverMan.cshtml",
       "FileKind": "mvc"
     }
   ],

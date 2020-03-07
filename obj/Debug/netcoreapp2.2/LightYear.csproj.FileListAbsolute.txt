@@ -14,7 +14,6 @@ C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.Asse
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.TagHelpers.input.cache
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.TagHelpers.output.cache
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\LightYear.RazorCoreGenerate.cache
-C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
@@ -32,3 +31,5 @@ C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Ho
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Lobby.g.cshtml.cs
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\GameScreen.g.cshtml.cs
 C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\GameOver.g.cshtml.cs
+C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\GameOverMan.g.cshtml.cs
+C:\Users\Zach\Desktop\LightYear\LightYear\obj\Debug\netcoreapp2.2\Razor\Views\Home\Temp.g.cshtml.cs

@@ -1,3 +1,4 @@
+@model Player
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameOver</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-@* @model Debugger *@
+
 </head>
+@* @model LightYearDebugger *@
 <body>
     <div id="babywrapper">
         <div class='GameoverHeader'>
             <h1 class="Gameover">Game Over Man</h1>
             <br>
+            @if(ViewBag.gameState.p1Population > 1){
             <h2 class='gameovervictorious'>Player 1 is Victorious</h2>
+            }
+            else if(ViewBag.gameState.p2Population > 1){
+            <h2 class='gameovervictorious'>Player 2 is Victorious</h2>
+            }
+            else
+            {
+            <h2 class='gameovervictorious'>EXTINCTION.. You both lost.</h2>
+            }
             <br>
-            <h1 class='GameOverBattleHistoryHeader'>Battle History</h1>
+            @* <h1 class='GameOverBattleHistoryHeader'>Battle History</h1> *@
         </div>
-
+        
         @* <div class="GameOverBattleHistory">
-            
+        
         </div> *@
         <div align="center">
             <br>
             <br>
-            <button class='shipyardbutton'>Exit Game</button>
+            <form action="/clear">
+                <button class='shipyardbutton'>Exit Game</button>
+            </form>
         </div>
     </div>
     

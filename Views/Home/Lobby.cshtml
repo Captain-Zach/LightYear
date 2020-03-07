@@ -1,34 +1,43 @@
 @model Player
-
-<h1>
-    @if(Model.Name != null)
-    {
-        <p>
-            Welcome @Model.Name
-        </p>
-    }
-</h1>
-<h1>
-    @if(ViewBag.GameReady == false)
-    {   
-        <p>
-            Waiting For Player2..
-        </p>
-    }
-    else
-    {
-        <p>
-            Let the games Begin!
-            @* Button to game screen *@
-            <Form asp-action='StartGame' asp-controller='Post' method='POST'>
-                <input type='submit' value='Start Game'>
-            </Form>
-        </p>
-    }
-</h1>
-
-
-
-<a asp-action="EndGame" asp-controller="Post">End Game</a>
-
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Index</title>
+        // In this context '~' refers to the wwwroot folder
+        <link rel="stylesheet" href="~/css/style.css"/>
+    </head>
+    <body>
+        <div id="babywrapper">
+                    <br>
+                    <br>
+            <h1>
+                @if(Model.Name != null)
+                {
+                    <h1 align='center' class='Player1State'>Welcome @Model.Name</h1>
+                }
+                else{
+                    <p></p>
+                    <p>Name @ViewBag.Player.Name</p>
+                }
+            </h1>
+            <h1>
+                @if(ViewBag.GameReady == false)
+                {   
+                    <h1 align='center' class='Player2State'>Waiting on Player 2...</h1>
+                }
+                else
+                {
+                    <p>
+                        Let the games Begin!
+                        @* Button to game screen *@
+                        <Form asp-action='StartGame' asp-controller='Post' method='POST'>
+                            <input type='submit' value='Start Game'>
+                        </Form>
+                    </p>
+                }
+            </h1>
+            <a asp-action="EndGame" asp-controller="Post">End Game</a>
+        </div>
+    </body>
+</html>

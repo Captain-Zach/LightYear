@@ -3,6 +3,15 @@
 }
 @model Player
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Index</title>
+        @* // In this context '~' refers to the wwwroot folder *@
+        <link rel="stylesheet" href="~/css/style.css"/>
+    </head>
+@*
 <div class="text-center">
     <h1 class="display-4">LightYear</h1>
     <h3>Welcome to the intro page!</h3>
@@ -16,6 +25,28 @@
                 <button>Hop on in!</button>
             </p>
         </p>
-    </form>
+    </form> *@
+    <body>
+        <div id="babywrapper">
+            <br>
+            <h1 align='center' class="Gameover">LightYear</h1>
+            <div class="IntroPageArt">
+                <img class="Intropicture" src="images/introartnewest.png" alt="lightyear photo">
+                <div align="center" class="gradiantpicturediv">
+                    <br>
+                    @* <h3 style="color: white;">SYNOPSIS HERE</h3>
+                    <br> *@
 
+                    <form asp-action="LoginProcess" asp-controller="Post">
+                        <input type="text" name="Name" value="ENTER NAME">
+                    <br>
+                    <br>
+                    <button class='shipyardbutton'>Start Game</button>
+                    </form>
+                </div>
 
+            </div>
+        
+        </div>
+    </body>
+</html>

@@ -27,6 +27,8 @@ namespace LightYear.Controllers
         {
             return View("Intro");
         }
+
+
         public IActionResult Lobby()
         {
             int PlayerId = (int)HttpContext.Session.GetInt32("PlayerState");
@@ -45,6 +47,7 @@ namespace LightYear.Controllers
             {
                 ViewBag.GameReady = false;
             }
+            ViewBag.Player = LoggedPlayer;
                 return View("Lobby", LoggedPlayer);
         }
         public void GameJoin()
@@ -77,22 +80,34 @@ namespace LightYear.Controllers
         public IActionResult GameScreen()
         {
             GameState CurrentState = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
-
+            List<Ship> p1ships = dbContext.Ships.Where(s => s.PlayerState == 1).ToList();
+            List<Ship> p2ships = dbContext.Ships.Where(s => s.PlayerState == 2).ToList();
             if(CurrentState.p1Turn == true && CurrentState.p2Turn == true)
             {
                 return RedirectToAction("GameLogic", "Post");
             }
             ViewBag.GameState = CurrentState;
+            ViewBag.p1Ships = p1ships.Count();
+            ViewBag.p2Ships = p2ships.Count();
             return View("GameScreen");
         }
-
-        public IActionResult GameOver()
+        [HttpGet("clear")]
+        public RedirectToActionResult butts()
         {
+            return RedirectToAction("EndGame", "Post");
+        }
+        public IActionResult GameOver()
+        {   
+            // ViewBag.EndGameTally = HttpContext.Session.GetInt32("CombatLog");
+            ViewBag.EndGameTally = dbContext.LightYearDebug.OrderByDescending(ly => ly.LightYearDebuggerId).FirstOrDefault();
             List<Ship> allShips = dbContext.Ships.ToList();
+
+            GameState GS = dbContext.Instances.FirstOrDefault(g => g.GameId == HttpContext.Session.GetInt32("GameId"));
+            ViewBag.gameState = GS;
             foreach(Ship ship in allShips) {dbContext.Remove(ship);}
             dbContext.SaveChanges();
-            return View();
-        }
+            return View("GameOverMan");
+        } 
 
 
         public IActionResult Test()
@@ -103,7 +118,7 @@ namespace LightYear.Controllers
             int turn = (int)HttpContext.Session.GetInt32("TurnNumber");
             turn++;
             HttpContext.Session.SetInt32("TurnNumber", turn);
-            return RedirectToAction("Index");
+            return View("");
         }
 
         public IActionResult Reset()

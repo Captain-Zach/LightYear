@@ -16,5 +16,6 @@ namespace LightYear.Models
         //
         public DbSet<GameState> Instances {get;set;}
 
+        public DbSet<LightYearDebugger> LightYearDebug {get;set;}
     }
 }
